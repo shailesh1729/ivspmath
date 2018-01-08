@@ -1,0 +1,64 @@
+Symmetric Group :math:`S_3`
+===============================
+
+.. topic:: Definition
+
+    If :math:`\sigma: S \mapsto T` and :math:`\tau: T \mapsto U`,
+    then the *composition* of :math:`\sigma` and :math:`\tau`
+    (also called their product) is the mapping :math:`\sigma \circ \tau: S \mapsto U`
+    defined by the means of :math:`s(\sigma \circ \tau) = (s\sigma) \tau \quad \forall s \in S`.
+
+
+* Let :math:`G = S_3`, the group of all 1-1 mappings of the set
+  :math:`\{x_1, x_2, x_3\}` onto itself, under the product as specified above.
+  G is a group of oder 6.
+
+* Any mapping :math:`\sigma` can be specified as:
+
+.. math::
+
+    \sigma : \begin{array}{l} 
+        x_1 \rightarrow x_i \\ 
+        x_2 \rightarrow x_j \\ 
+        x_3 \rightarrow x_k 
+        \end{array}
+        \quad i,j,k \in \{1,2,3\}, i \neq j, j \neq k, k \neq i
+        
+* Simpler notation :math:`\sigma : (x_1, x_2, x_3) \mapsto (x_i, x_j, x_k)`
+* Even simpler notation :math:`\sigma :  (1, 2, 3) \mapsto (i, j, k)`
+* Simplest notation :math:`\sigma = (i,j,k)`
+
+
+* :math:`S_3 = \{ (1,2,3), (1,3,2), (2,1,3), (2,3,1), (3,1,2), (3,2,1)\}`
+
+* Define :math:`e = (1,2,3)`, identity mapping
+* Define :math:`\phi = (2,1,3)`
+* Define :math:`\psi = (2,3,1)`
+
+
+Derivations
+----------------------
+
+* :math:`\phi^2 = \phi \cdot \phi = (2,1,3) \circ (2,1,3) = (1,2,3) = e`
+* Thus :math:`\phi^{-1} = \phi`
+* :math:`\psi^2 = \psi \cdot \psi = (2,3,1) \circ (2,3,1) = (3,1,2)`
+* :math:`\psi^3 = \psi^2 \cdot \psi = (3,1,2) \circ (2,3,1) = (1,2,3) = e`
+* Thus :math:`\psi^{-1} = \psi^2`
+* :math:`\phi\psi = \phi \cdot \psi = (2,1,3) \circ (2,3,1) = (3,2,1)`
+* :math:`\psi\phi = \psi \cdot \phi = (2,3,1) \circ (2,1,3) = (1,3,2)`
+* Thus :math:`S_3 = \{ e, \phi, \psi, \phi\psi, \psi\phi, \psi^2 \}`
+
+
+.. rubric:: Elements of :math:`S_3`
+
+====================   =================    =================   =============
+Element                 Mapping                 Inverse         Order
+====================   =================    =================   =============
+:math:`e`               (1,2,3)             :math:`e`           1
+:math:`\phi`            (2,1,3)             :math:`\phi`        2    
+:math:`\psi`            (2,3,1)             :math:`\psi^2`      3
+:math:`\phi\psi`        (3,2,1)             :math:`\phi\psi`    2
+:math:`\psi\phi`        (1,3,2)             :math:`\psi\phi`    2
+:math:`\psi^2`          (3,1,2)             :math:`\psi`        3
+====================   =================    =================   =============
+

@@ -1,0 +1,190 @@
+digraph G {
+
+    graph[
+        overlap=false
+        splines=true
+        rankdir=BT
+    ]
+    compound=true;
+    fontsize = 10;
+    node [
+        fontsize = 10
+        shape = "record"
+        color=gray
+        fontcolor= blue
+    ]
+
+    edge [
+        fontsize = 8
+    ]
+    
+    subgraph{
+        Set [
+            label="{Set|no operations}"
+        ]
+    }
+
+    subgraph cluster_one_op_one_set{
+        label="One set with one binary operation"
+        node [
+        ]
+        
+        Magma[
+            label="{Magma|closure}"
+            URL="http://en.wikipedia.org/wiki/Magma_(algebra)"
+        ]
+        
+        Semigroup [
+            label="{Semigroup|associativity}"
+            URL="http://en.wikipedia.org/wiki/Semigroup"
+        ]
+        
+        Monoid [
+            label="{Monoid}"
+            URL="http://en.wikipedia.org/wiki/Monoid"
+        ]
+        
+        Group [
+            label="{Group|inverse}"
+            URL="http://en.wikipedia.org/wiki/Group_(mathematics)"
+        ]
+        
+        CommutativeGroup [
+            label="{Abelian Group|commutativity}"
+            URL="http://en.wikipedia.org/wiki/Abelian_Group"
+        ]
+        
+        Quasigroup [
+            label="{Quasigroup|inverse}"
+            URL="http://en.wikipedia.org/wiki/Quasigroup"
+        ]
+        
+        Unital [
+            label="{Unital|identity}"
+            URL="http://en.wikipedia.org/wiki/Unital_algebra"
+        ]
+        
+        Loop [
+            label="{Loop}"
+            URL="http://en.wikipedia.org/wiki/Loop_(algebra)#Loop"
+        ]
+        
+        Semicategory [
+            label="{Semicategory|associativity}"
+            URL="http://en.wikipedia.org/wiki/Category_(mathematics)"
+        ]
+        
+        Category [
+            label="{Category|identity}"
+            URL="http://en.wikipedia.org/wiki/Category_(mathematics)"
+        ]
+        
+        Groupoid [
+            label="{Groupoid|inverse}"
+            URL="http://en.wikipedia.org/wiki/Groupoid"
+        ]
+        
+        {
+            rank=same;
+            Magma;Semicategory;
+        }
+    
+        Semigroup -> Magma;
+        Quasigroup -> Magma;
+        Unital -> Magma;
+        Loop -> Unital;
+        Loop -> Quasigroup;
+        Monoid -> Semigroup;
+        Monoid -> Unital;
+        Group -> Monoid;
+        Group -> Loop;
+        CommutativeGroup -> Group;
+        Category->Semicategory;
+        Groupoid -> Category;
+        Group -> Groupoid;
+    }
+    
+    subgraph cluster_one_set_two_ops{
+    
+        label="One set with two operations"
+        
+        Ring [
+            label="{Ring (S,+,*)|Abelian Group(+)\nMonoid(*)|distributivity}"
+            URL="http://en.wikipedia.org/wiki/Ring_(mathematics)"
+        ]
+    
+        CommutativeRing [
+            label="{Commutative Ring|commutative(*)}"
+            URL="http://en.wikipedia.org/wiki/Commutative_ring"
+        ]
+        
+        IntegralDomain [
+            label="{Integral Domain|no zero divisors}"
+            URL="http://en.wikipedia.org/wiki/Integral_domain"
+        ]
+        
+        Field [
+            label="{Field|S - \{0\}(Commutiative Group under *)}"
+            URL="http://en.wikipedia.org/wiki/Field_(mathematics)"
+        ]
+        
+        CommutativeRing->Ring;
+        IntegralDomain->CommutativeRing;
+        Field->IntegralDomain;
+    }
+    subgraph cluster_two_set_two_ops{
+        label="Two sets with two operations"
+        VectorSpace[
+            label="{Vector Space\n(A over B)| Abelian Group (A)\n Field (B)}"
+            URL="http://en.wikipedia.org/wiki/Vector_space"
+        ]
+        Module[
+            label="{Module\n(A over B)| Abelian Group (A)\n Ring (B)}"
+            URL="http://en.wikipedia.org/wiki/Module_(mathematics)"
+        ]
+        RModule[
+            label="{R Module\n(A over B)| Abelian Group (A)\nCommutative Ring (B)}"
+            URL="http://en.wikipedia.org/wiki/Module_(mathematics)"
+        ]
+        //GroupOps [
+        //    label="{Group with operators\n(G with B))}"
+        //]
+        
+        RModule->Module;
+        VectorSpace->RModule;
+    }
+    subgraph cluster_two_set_three_ops{
+        label="Two sets with three ops"
+        AlgebraOverRing [
+            label="{Algebra over ring\n(A over B)| bilinear product on A}"
+            URL="http://en.wikipedia.org/wiki/Algebra_(ring_theory)"
+        ]
+        AlgebraOverField [
+            label="{Algebra over field\n(A over B)}"
+            URL="http://en.wikipedia.org/wiki/Algebra_over_a_field"
+        ]
+        AlgebraOverField->AlgebraOverRing;
+        AlgebraOverRing->RModule;
+        AlgebraOverField->VectorSpace;
+    }
+    {
+        edge [style = dotted, color=blue]
+        Magma->Set;
+        Semicategory->Set;
+        Ring->CommutativeGroup;
+        Ring->Monoid;
+        Module->CommutativeGroup;
+        VectorSpace->CommutativeGroup;
+        //GroupOps->Group;
+        //GroupOps->Set;     
+    }
+    {
+        // connections for 2nd  sets
+        edge [style=dotted, color=green]
+        Module->Ring;
+        RModule->CommutativeRing;
+        VectorSpace->Field;
+    }
+    
+    
+}
