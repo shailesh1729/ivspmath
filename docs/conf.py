@@ -31,14 +31,10 @@ extensions = [
         'sphinx.ext.graphviz',
         'sphinx.ext.intersphinx', 
         'sphinx.ext.todo', 
-        #'sphinx.ext.pngmath', 
         'sphinx.ext.mathjax', 
         'sphinx.ext.viewcode',
         'sphinx.ext.autodoc',
         'sphinx.ext.doctest',
-        'ipython_console_highlighting',
-        #'inheritance_diagram',
-        'numpydoc',
         'sphinxcontrib.fulltoc',
         'sphinxcontrib.bibtex'
 ]
