@@ -43,3 +43,5 @@ rsconnect
 .Rbuildignore
 *.Rproj
 unsorted
+
+__pycache__
