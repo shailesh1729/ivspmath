@@ -34,10 +34,6 @@ extensions = [
         #'sphinx.ext.pngmath', 
         'sphinx.ext.mathjax', 
         'sphinx.ext.viewcode',
-        #'matplotlib.sphinxext.mathmpl',
-        'matplotlib.sphinxext.only_directives',
-        'matplotlib.sphinxext.plot_directive',
-#        'matplotlib.sphinxext.ipython_directive',
         'sphinx.ext.autodoc',
         'sphinx.ext.doctest',
         'ipython_console_highlighting',
@@ -298,3 +294,5 @@ pngmath_latex_preamble = r"""
 \usepackage{mathdots}
 """
 
+# BIBTEX Settings
+bibtex_bibfiles = ['references.bib']
