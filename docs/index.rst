@@ -18,6 +18,7 @@ Mathematics for Signal Processing :math:`a^2 +b^2 = c^2`
    linear_algebra/index
    matrix_algebra/index
    polynomial_algebra/index
+   nla/index
    group_theory/index
    statistics_probability/index
    topology/index
